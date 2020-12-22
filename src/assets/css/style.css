@@ -1,0 +1,191 @@
+@font-face{
+    font-family: "Avenirltstd";
+    src: url('../fonts/avenir.otf');
+}
+
+@font-face{
+    font-family: "Avenirltstd-bold";
+    src: url('../fonts/avenir-bold.otf');
+}
+
+*{
+	margin: 0;
+}
+
+button{
+	border: none;
+	color: #ffffff;
+	border-radius: 100%;
+}
+
+.container{
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.interface{
+	border: 1px solid #000;
+	margin: 0 auto;
+	width: 415px;
+	height: 360px;
+	position: relative;
+	text-align: center;
+}
+
+.content{
+	height: 260px;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.logo{
+	margin-top: 35px;
+}
+
+.logomarca{
+	width: 	90px;
+	height: 34.35px;
+}
+
+.libraryTitle{
+	font-family: 'Avenirltstd-bold';
+	color: #0c8e36;
+	top: 80px;
+	left: 135px; 
+	position: absolute;
+}
+
+.control{
+	transition: .3s all;
+	position: relative;
+	background-color: #0c8e36;
+	height: 140px;
+	width: 200px;
+	margin-top: 25px;
+	-moz-border-radius: 200px / 130px; 
+    -webkit-border-radius: 200px / 130px; 
+    border-radius: 200px / 130px;  
+}
+
+.rightButton{
+	transition: .3s all;
+	position: absolute;
+	top: 50%;
+	right: 0;
+	transform: translateY(-50%);
+	width: 120px;
+	height: 120px;
+	background-color:#0c8e36;
+	font-size: 1.25em;
+	cursor: pointer;
+	outline: none;
+	transition: .5s ease-in-out;
+}
+
+.leftButton{
+	transition: .3s all;
+	position: absolute;
+	top: 50%;
+	left: 0;
+	transform: translateY(-50%);
+	width: 120px;
+	height: 120px;
+	background-color:#0c8e36;
+	font-size: 1.25em;
+	cursor: pointer;
+	outline: none;
+	transition: .5s ease-in-out;
+}
+
+.leftButton p{
+	position: relative;
+	font-weight: 700;
+	right: 30px;
+}
+
+.rightButton p{
+	position: relative;
+	font-weight: 700;
+	left: 30px;
+}
+
+.okButton{
+	cursor: pointer;
+	transition: .3s all;
+	position: absolute;
+	top: 20%;
+	left: 50%;
+	width: 90px;
+	transform: translate(-50%);
+	height: 80px;
+	background-color:#0c8e36;
+	border: solid white 3px;
+	border-radius: 50%;
+	font-family: 'Avenirltstd-bold';
+	font-size: 1.25em;
+	outline: none;
+}
+
+.leftButton:hover, .rightButton:hover, .okButton:hover{
+	background-color: #006422;
+}
+
+
+.control.active, .control.active .rightButton, .control.active .leftButton, .control.active .okButton{
+	background-color: #f39c12;
+}
+
+.control.active .rightButton:hover, .control.active .leftButton:hover, .control.active .okButton:hover{
+	background-color: #eb8200;
+}
+
+
+.library{
+	cursor: pointer;
+	outline: none;
+	margin-top: 15px;
+	width: 60px;
+	height: 60px;	
+	background-color: #f39c12;
+}
+
+.library:hover{
+	background-color: #eb8200;
+}
+
+.setaLibrary{
+	width: 25px;
+	height: 25px;
+	margin-top: 5px;
+	margin-left: 6px;
+}
+
+.navigation{
+	cursor: pointer;
+	outline: none;
+	margin-top: 15px;
+	width: 60px;
+	height: 60px;
+	background-color:#0c8e36;
+	font-family: 'Avenirltstd';
+}
+
+.navigation:hover{
+	background-color: #006422;
+}
+
+.libraryDesc{
+	font-family: 'Avenirltstd';
+	color: #0c8e36;
+}
+
+.hidden{
+	display: none;
+}
