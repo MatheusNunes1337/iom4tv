@@ -138,7 +138,7 @@ button{
 }
 
 
-.control.active, .control.active .rightButton, .control.active .leftButton, .control.active .okButton{
+.lib_rightButton, .lib_leftButton, .lib_okButton{
 	background-color: #f39c12;
 }
 
@@ -186,6 +186,12 @@ button{
 	color: #0c8e36;
 }
 
-.hidden{
-	display: none;
+
+.lib {
+	background-color: #f39c12;
 }
+/*
+.lib:hover {
+	background-color: #eb8200;
+}
+*/
