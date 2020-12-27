@@ -22,7 +22,7 @@ button{
 	width: 100vw;
 	height: 100vh;
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -43,6 +43,18 @@ button{
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
+}
+
+div.buttons_wrapper {
+	margin-top: 45px;
+}
+
+div.buttons_wrapper > button {
+	background-color: #0c8e36;
+	border-radius: 0%;
+	margin-right: 15px;
+	padding: 10px 20px;
+	font-size: 20px;
 }
 
 .logo{
@@ -131,9 +143,10 @@ button{
 	font-family: 'Avenirltstd-bold';
 	font-size: 1.25em;
 	outline: none;
+	z-index: 2;
 }
 
-.leftButton:hover, .rightButton:hover, .okButton:hover{
+.leftButton:focus, .rightButton:focus, .okButton:focus{
 	background-color: #006422;
 }
 
@@ -142,7 +155,7 @@ button{
 	background-color: #f39c12;
 }
 
-.control.active .rightButton:hover, .control.active .leftButton:hover, .control.active .okButton:hover{
+.control.active .rightButton:focus, .control.active .leftButton:focus, .control.active .okButton:focus {
 	background-color: #eb8200;
 }
 
@@ -156,7 +169,7 @@ button{
 	background-color: #f39c12;
 }
 
-.library:hover{
+.library:focus{
 	background-color: #eb8200;
 }
 
