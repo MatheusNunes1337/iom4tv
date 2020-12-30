@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import api from '../services/api'
 
 import { useHistory } from 'react-router-dom'
@@ -7,13 +7,17 @@ import { useHistory } from 'react-router-dom'
 import logomarca from "../assets/images/logomarca.png"
 import seta from "../assets/images/seta.svg"
 
+//context 
+import { Context } from '../contexts/buttonContext'
+
 import '../assets/css/style.css'
 
 function Home() {
   let [funcao, setFuncao] = useState('')
-  let [index, setIndex] = useState(0)
-
+  const { index, setMovement, setIndex } = useContext(Context)
+  
   const history = useHistory()
+
 
   async function trocarCanal(e) {
   	const funcao = e.currentTarget.value
@@ -45,34 +49,15 @@ function Home() {
   	history.push('/biblioteca')
   }
 
-
-  function setMovement(e) {
-    const movement = e.currentTarget.value
-
-    if(movement === 'LEFT') {
-       if(index === 0) {
-          setIndex(document.getElementsByClassName("interact_btn").length - 1)
-       } else {
-         setIndex(index - 1)
-       }
-    } else if(movement === 'RIGHT') {
-        if(index === document.getElementsByClassName("interact_btn").length - 1) {
-          setIndex(0)
-       } else {
-         setIndex(index + 1)
-       }
-    } else {
-        document.getElementsByClassName('interact_btn')[index].click()
-    }
-  }
-
   useEffect(() => {
       let btn;
       btn = document.getElementsByClassName("interact_btn")[index]
       btn.focus();
   }, [index]);
 
-
+  useEffect(() => {
+      setIndex(0)
+  }, []);
 
 
 
