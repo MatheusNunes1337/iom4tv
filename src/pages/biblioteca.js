@@ -10,41 +10,20 @@ import seta from "../assets/images/seta.svg"
 
 //context 
 import { Context } from '../contexts/buttonContext'
+import { RequestContext } from '../contexts/requestContext'
 
 import '../assets/css/style.css'
 
 function Biblioteca() {
-  let [funcao, setFuncao] = useState('')
   const { index, setMovement, setIndex } = useContext(Context)
-  const history = useHistory()
+  const { funcao, makeRequest } = useContext(RequestContext)
+  let history = useHistory()
 
-  async function trocarVideo(e) {
-  	const funcao = e.currentTarget.value
-  	let TVkeyCode
-
-  	setFuncao(funcao)
-  	if(funcao === 'esquerda') {
-  		TVkeyCode = 37
-  	} else {
-  		TVkeyCode = 39
-  	}
-  	const data = {keyCode: TVkeyCode}
-  	//const response = await api.post('/', data)
-  	//console.log(response.data)
-  }
-
-  async function escolherVideo() {
-  	const TVkeyCode = 13
-  	const data = {keyCode: TVkeyCode}
-  	//const response = await api.post('/', data)
-  	//console.log(response.data)
-  }
-
-  async function goBackHome() {
-  	const TVkeyCode = 48
-  	const data = {keyCode: TVkeyCode}
-  	//await api.post('/', data)
-  	history.push('/')
+  async function goBackHome(e) {
+    const TVkeyCode = e.currentTarget.id
+    const data = {keyCode: TVkeyCode}
+    //await api.post('/', data)
+    history.push('/')
   }
 
   useEffect(() => {
@@ -55,7 +34,6 @@ function Biblioteca() {
 
   useEffect(() => {
       setIndex(0)
-      alert('san e')
   }, []);
 
 
@@ -67,11 +45,11 @@ function Biblioteca() {
 			</div>
 			<div className="content">
 				<div className="control lib">
-					<button className="lib leftButton interact_btn" value="esquerda" onClick={trocarVideo}> <p> esq </p> </button>
-					<button className="lib okButton interact_btn" value="OK" onClick={escolherVideo}>OK</button>
-          <button className="lib rightButton interact_btn" value="direita" onClick={trocarVideo}> <p> dir </p> </button>
+					<button id="37" className="lib leftButton interact_btn" value="esquerda" onClick={makeRequest}> <p> esq </p> </button>
+					<button id="13" className="lib okButton interact_btn" value="OK" onClick={makeRequest}>OK</button>
+          <button id="39" className="lib rightButton interact_btn" value="direita" onClick={makeRequest}> <p> dir </p> </button>
 				</div>
-				<button className="library interact_btn" onClick={goBackHome}> 
+				<button id="48" className="library interact_btn" onClick={goBackHome}> 
 					<img src={seta} className="setaLibrary"/>  
 				</button>
 			</div>
