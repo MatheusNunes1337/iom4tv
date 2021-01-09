@@ -7,22 +7,22 @@ const Context = createContext()
 function ButtonProvider({ children }) {
 	let [index, setIndex] = useState(0)
 
-  	function setMovement(e) {
-	    const movement = e.currentTarget.value
+  	function setMovement(event) {
+	    const movement = event.key
 
-	    if(movement === 'LEFT') {
+	    if(movement == 1) {
 	       if(index === 0) {
 	          setIndex(document.getElementsByClassName("interact_btn").length - 1)
 	       } else {
 	         setIndex(index - 1)
 	       }
-	    } else if(movement === 'RIGHT') {
+	    } else if(movement == 2) {
 	        if(index === document.getElementsByClassName("interact_btn").length - 1) {
 	          setIndex(0)
 	       } else {
 	         setIndex(index + 1)
 	       }
-	    } else {
+	    } else if (movement == 3) {
 	        document.getElementsByClassName('interact_btn')[index].click()
 	        document.getElementsByClassName('interact_btn')[index].focus()
 	    }

@@ -38,7 +38,7 @@ function Biblioteca() {
 
 
   return (
-    <div className="container">
+    <div className="container" onKeyPress={setMovement} tabIndex={-1}>
 		<div className="interface">
 			<div className="logo">
 				<img src={logomarca} className="logomarca"/>
@@ -55,11 +55,6 @@ function Biblioteca() {
 			</div>
 			<p className="libraryDesc leftTitle"> Você trocou para {funcao}. </p>
 		</div>
-    <div className="buttons_wrapper">
-        <button value="LEFT" onClick={setMovement}>Left</button>
-        <button value="TOP" onClick={setMovement}>Top</button>
-        <button value="RIGHT" onClick={setMovement}>Right</button>
-     </div>
 	</div>
   );
 }
