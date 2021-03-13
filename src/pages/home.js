@@ -3,6 +3,8 @@ import api from '../services/api'
 
 import { useHistory } from 'react-router-dom'
 
+import { BsChevronDoubleRight, BsChevronDoubleLeft} from "react-icons/bs"
+
 //images
 import logomarca from "../assets/images/logomarca.png"
 import seta from "../assets/images/seta.svg"
@@ -45,9 +47,9 @@ function Home() {
 			</div>
 			<div className="content">
 				<div className="control">
-					<button id="40" className="leftButton interact_btn" value="esquerda" onClick={makeRequest}> <p> esq </p> </button>
+					<button id="40" className="leftButton interact_btn" value="esquerda" onClick={makeRequest}><p><BsChevronDoubleLeft/></p></button>
 					<button id="13" className="okButton interact_btn" value="OK" onClick={makeRequest}>OK</button>
-          <button id="38" className="rightButton interact_btn" value="direita" onClick={makeRequest}> <p> dir </p> </button>
+          			<button id="38" className="rightButton interact_btn" value="direita" onClick={makeRequest}><p><BsChevronDoubleRight /></p></button>
 				</div>
 				<button id="48" className="library interact_btn" onClick={goToLib}> 
 					<img src={seta} className="setaLibrary"/>  

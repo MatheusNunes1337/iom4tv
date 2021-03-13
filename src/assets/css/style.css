@@ -118,14 +118,16 @@ div.buttons_wrapper > button {
 
 .leftButton p{
 	position: relative;
-	font-weight: 700;
+	font-weight: 900;
 	right: 30px;
+	font-size: 22px;
 }
 
 .rightButton p{
 	position: relative;
-	font-weight: 700;
+	font-weight: 900;
 	left: 30px;
+	font-size: 22px;
 }
 
 .okButton{
@@ -148,6 +150,7 @@ div.buttons_wrapper > button {
 
 .leftButton:focus, .rightButton:focus, .okButton:focus{
 	background-color: #006422;
+	outline: none;
 }
 
 
@@ -208,3 +211,7 @@ div.buttons_wrapper > button {
 	background-color: #eb8200;
 }
 */
+
+.icone {
+	font-weight: bold;
+}
