@@ -1,6 +1,8 @@
 import React, {useState, useEffect, useContext} from 'react';
 import api from '../services/api'
 
+import {BsChevronDoubleRight, BsChevronDoubleLeft} from 'react-icons/bs'
+
 import { useHistory } from 'react-router-dom'
 
 //images
@@ -45,15 +47,14 @@ function Home() {
 			</div>
 			<div className="content">
 				<div className="control">
-					<button id="40" className="leftButton interact_btn" value="esquerda" onClick={makeRequest}> <p> esq </p> </button>
+					<button id="40" className="leftButton interact_btn" value="esquerda" onClick={makeRequest}><BsChevronDoubleLeft className="buttonIcon"/></button>
 					<button id="13" className="okButton interact_btn" value="OK" onClick={makeRequest}>OK</button>
-          <button id="38" className="rightButton interact_btn" value="direita" onClick={makeRequest}> <p> dir </p> </button>
+          <button id="38" className="rightButton interact_btn" value="direita" onClick={makeRequest}><BsChevronDoubleRight className="buttonIcon"/></button>
 				</div>
 				<button id="48" className="library interact_btn" onClick={goToLib}> 
 					<img src={seta} className="setaLibrary"/>  
 				</button>
 			</div>
-			<p className="libraryDesc leftTitle"> Você trocou para {funcao}</p>
 		</div>
 	</div>
   );

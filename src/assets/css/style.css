@@ -95,7 +95,7 @@ div.buttons_wrapper > button {
 	width: 120px;
 	height: 120px;
 	background-color:#0c8e36;
-	font-size: 1.25em;
+	font-size: 1.45em;
 	cursor: pointer;
 	outline: none;
 	transition: .5s ease-in-out;
@@ -110,19 +110,19 @@ div.buttons_wrapper > button {
 	width: 120px;
 	height: 120px;
 	background-color:#0c8e36;
-	font-size: 1.25em;
+	font-size: 1.45em;
 	cursor: pointer;
 	outline: none;
 	transition: .5s ease-in-out;
 }
 
-.leftButton p{
+.leftButton .buttonIcon{
 	position: relative;
 	font-weight: 700;
 	right: 30px;
 }
 
-.rightButton p{
+.rightButton .buttonIcon{
 	position: relative;
 	font-weight: 700;
 	left: 30px;
