@@ -7,9 +7,8 @@ const Context = createContext()
 function ButtonProvider({ children }) {
 	let [index, setIndex] = useState(0)
 
-  	function setMovement(event) {
-	    const movement = event.key
-
+  	function handleMovement(movement) {
+	   
 	    if(movement == 1) {
 	       if(index === 0) {
 	          setIndex(document.getElementsByClassName("interact_btn").length - 1)
@@ -29,7 +28,7 @@ function ButtonProvider({ children }) {
   	}
 
 	return (
-		<Context.Provider value={{ index, setMovement, setIndex}} >
+		<Context.Provider value={{ index, handleMovement, setIndex}} >
 			{children}
 		</Context.Provider>
 	)
